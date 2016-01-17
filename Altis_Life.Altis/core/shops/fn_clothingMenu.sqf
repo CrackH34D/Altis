@@ -41,7 +41,7 @@ if((SEL(_this,3) in ["dive"] && !license_civ_dive)) exitWith { hint localize "ST
 
 _pos = [1000,1000,10000];
 
-if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_random"),1))}) then {
+if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0))}) then {
 	if(SEL(_this,3) == "bruce") then {
 		_pos = [17088.2,11313.6,0.00136757];
 		};
@@ -99,7 +99,7 @@ player setBehaviour "SAFE";
 player attachTo [_testLogic,[0,0,0]];
 player switchMove "";
 
-if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_random"),1))}) then {
+if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0))}) then {
 	player setDir 0;
 };
 

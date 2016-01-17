@@ -10,9 +10,8 @@ class Life_Settings {
     save_virtualItems = true; //Save Virtual items (all sides)?
 
     /* Clothing related settings */
-    clothing_random = false; //Enable/Disable teleport to side loaction for preview for clothing shops.
-    clothing_box = true; //true = preview inside a black box.  false = preview on map. -- Should be false if random is true.
-        
+    clothing_box = true; //true = preview inside a black box.  false = preview on map.
+
     /* Revive system settings */
     revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
     revive_fee = 1500; //Revive fee that players have to pay and medics / EMS are rewarded
