@@ -41,8 +41,8 @@ if((SEL(_this,3) in ["dive"] && !license_civ_dive)) exitWith { hint localize "ST
 
 _pos = [1000,1000,10000];
 
-if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0))}) then {
-	if(SEL(_this,3) == "bruce") then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
+		if(SEL(_this,3) == "bruce") then {
 		_pos = [17088.2,11313.6,0.00136757];
 		};
 		if(SEL(_this,3) == "reb") then {
@@ -60,7 +60,7 @@ _oldDir = getDir player;
 _oldPos = visiblePositionASL player;
 _oldBev = behaviour player;
 
-if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1))}) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
 	_testLogic = "Logic" createVehicleLocal _pos;
 	_testLogic setPosATL _pos;
 
@@ -89,7 +89,7 @@ _light lightAttachObject [_testLogic, [0,0,0]];
 
 {if(_x != player) then {_x hideObject true;};} foreach playableUnits;
 
-if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1))}) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
 	{
 		_x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];
 	} foreach [_ut1,_ut2,_ut3,_ut4];
@@ -99,7 +99,7 @@ player setBehaviour "SAFE";
 player attachTo [_testLogic,[0,0,0]];
 player switchMove "";
 
-if({(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0))}) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
 	player setDir 0;
 };
 
