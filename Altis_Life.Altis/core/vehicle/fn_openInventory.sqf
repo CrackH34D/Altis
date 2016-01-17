@@ -19,6 +19,10 @@ _vehicle setVariable["trunk_in_use",true,true];
 if(!createDialog "TrunkMenu") exitWith {hint localize "STR_MISC_DialogError";}; //Couldn't create the menu?
 disableSerialization;
 
+if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_virtualItems"),1)) then {
+    [_vehicle] call life_fnc_updateVehTrunk;
+}
+
 if(_vehicle isKindOf "House_F") then {
 	ctrlSetText[3501,format[(localize "STR_MISC_HouseStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 } else {
